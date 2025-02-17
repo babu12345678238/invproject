@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grand Opening Invitation</title>
+    <link rel="stylesheet" href="stc.css">
+</head>
+<body>
+    <div class="invitation-card">
+        <div class="header">
+            <h1>🌸 Grand Opening Invitation 🌸</h1>
+            <p>You're Invited to the Grand Opening of Boutique</p>
+            <h2>"First Choice Fashions"</h2>
+        </div>
+        <div class="content">
+            <p><strong>📅 Date:</strong> 20th February 2025</p>
+            <p><strong>⏰ Time:</strong> 8:00 AM – 11:00 AM</p>
+            <p><strong>📍 Venue:</strong> First Choice Fashions, Near QFC Restaurant, Gangamma Gudi Road, M V Extension, Hosakote - 562114</p>
+        </div>
+        <div class="footer">
+            <p>💖 <strong>A Heartfelt Welcome to Our Grand Opening ceremony!</strong> 💖</p>
+            <p>For more details, contact:</p>
+            <p>📞 9632335524 / 7026043884</p>
+        </div>
+
+      <!-- Button to locate the shop -->
+      <button onclick="getDirections()">Locate Shop</button>
+      <p id="directionsMessage"></p>
+    </div>
+    <script>
+      function getDirections() {
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            let userLat = position.coords.latitude;
+            let userLng = position.coords.longitude;
+            // Encode the shop address for the URL
+            let shopAddress = encodeURIComponent("First Choice Fashion, near QFC Restaurant, Gangamma Gudi Road, M V Extension, Hosakote - 562114");
+            // Create a URL to get directions from the user's location to the shop
+            let directionsURL = `https://maps.app.goo.gl/ewthC8K8AKvN2j3L6`;
+            window.open(directionsURL, "_blank");
+          }, function(error) {
+            document.getElementById("directionsMessage").innerHTML = "Unable to retrieve your location. Please try again.";
+          });
+        } else {
+          document.getElementById("directionsMessage").innerHTML = "Geolocation is not supported by this browser.";
+        }
+      }
+    </script>
+</body>
+</html>
