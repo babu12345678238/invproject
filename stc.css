@@ -1,0 +1,42 @@
+body {
+    font-family: 'Arial', sans-serif;
+    background: url('flowers.jpj.jpg') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.invitation-card {
+    width: 90%;
+    max-width: 500px;
+    background: transparent; /* Removed white background */
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.7); /* Subtle text shadow for readability */
+}
+
+.header, .footer {
+    background: transparent; /* Remove tinted backgrounds from header and footer */
+    padding: 15px;
+}
+
+.header h1 {
+    font-size: 22px;
+    margin: 0;
+
+}
+
+.header h2 {
+    font-size: 26px;
+    margin-top: 5px;
+
+}
+
+.content {
+    padding: 15px;
+    font-size: 18px;
+}
